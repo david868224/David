@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David Carvalho — Cartão Digital</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    background: radial-gradient(circle at 30% 20%, #24262b 0%, #131417 60%, #0a0a0c 100%);
+    font-family:'Poppins', sans-serif;
+    padding: 40px 20px;
+  }
+
+  .card-link{
+    display:block;
+    text-decoration:none;
+    color:inherit;
+    width: 100%;
+    max-width: 620px;
+  }
+
+  .card{
+    position:relative;
+    background: linear-gradient(155deg, #1B1C20 0%, #101114 100%);
+    border: 1px solid rgba(212,175,110,0.25);
+    border-radius: 26px;
+    padding: 56px 52px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.55), 0 2px 0 rgba(255,255,255,0.03) inset;
+    overflow:hidden;
+    transition: transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s cubic-bezier(.4,0,.2,1), border-color .35s;
+  }
+
+  .card::before{
+    content:'';
+    position:absolute; inset:0;
+    background:
+      radial-gradient(420px 260px at 88% -10%, rgba(212,175,110,0.16), transparent 70%),
+      radial-gradient(360px 240px at -10% 110%, rgba(212,175,110,0.08), transparent 70%);
+    pointer-events:none;
+  }
+
+  .card-link:hover .card{
+    transform: translateY(-6px);
+    box-shadow: 0 40px 90px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,175,110,0.3);
+    border-color: rgba(212,175,110,0.5);
+  }
+
+  .top-row{
+    display:flex; align-items:center; justify-content:space-between;
+    position:relative; z-index:2;
+    margin-bottom: 44px;
+  }
+
+  .mark{
+    width:58px; height:58px; border-radius:16px;
+    background: linear-gradient(135deg, #E8D2A5, #C9A15A);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700; font-size:22px; color:#131417;
+    letter-spacing:-0.02em;
+  }
+
+  .tag{
+    font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    color:#8A8D94;
+    border:1px solid rgba(255,255,255,0.14);
+    padding:8px 16px; border-radius:999px;
+  }
+
+  .name{
+    position:relative; z-index:2;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size: clamp(30px, 5vw, 40px);
+    line-height:1.18;
+    color:#F5F3EE;
+    letter-spacing:-0.01em;
+    margin-bottom: 16px;
+  }
+
+  .role{
+    position:relative; z-index:2;
+    font-size:14.5px;
+    font-weight:500;
+    color:#B8AE9A;
+    letter-spacing:.02em;
+    line-height:1.6;
+  }
+  .role span{ color:#D4AF6E; margin:0 10px; }
+
+  .divider{
+    position:relative; z-index:2;
+    height:1px;
+    background: linear-gradient(90deg, rgba(212,175,110,0.5), rgba(255,255,255,0.06));
+    margin: 40px 0 30px;
+  }
+
+  .bottom-row{
+    position:relative; z-index:2;
+    display:flex; align-items:center; justify-content:space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .link-chip{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:14px; font-weight:600; color:#F5F3EE;
+    background: rgba(212,175,110,0.1);
+    border:1px solid rgba(212,175,110,0.4);
+    padding:13px 22px;
+    border-radius:999px;
+    transition: background .25s, border-color .25s;
+  }
+  .card-link:hover .link-chip{
+    background: rgba(212,175,110,0.2);
+    border-color: rgba(212,175,110,0.7);
+  }
+  .link-chip svg{ width:16px; height:16px; flex-shrink:0; }
+
+  .arrow{
+    width:44px; height:44px; border-radius:50%;
+    border:1px solid rgba(255,255,255,0.14);
+    display:flex; align-items:center; justify-content:center;
+    color:#D4AF6E;
+    transition: transform .3s cubic-bezier(.4,0,.2,1), background .3s, border-color .3s;
+    flex-shrink:0;
+  }
+  .card-link:hover .arrow{
+    transform: translateX(4px);
+    background: rgba(212,175,110,0.14);
+    border-color: rgba(212,175,110,0.5);
+  }
+  .arrow svg{ width:18px; height:18px; }
+
+  @media (max-width:480px){
+    .card{ padding:40px 28px; border-radius:22px; }
+    .name{ font-size:26px; }
+    .role{ font-size:13px; }
+    .role span{ margin:0 6px; }
+    .bottom-row{ flex-direction:column; align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<a class="card-link" href="https://david868224.github.io/David/" target="_blank" rel="noopener">
+  <div class="card">
+    <div class="top-row">
+      <div class="mark">DC</div>
+      <div class="tag">Cartão Digital</div>
+    </div>
+
+    <div class="name">David de Jesus<br>Mawete de Carvalho</div>
+    <div class="role">Técnico de Informática<span>·</span>Vibe Coder<span>·</span>Desenvolvedor Web</div>
+
+    <div class="divider"></div>
+
+    <div class="bottom-row">
+      <span class="link-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        david868224.github.io/David
+      </span>
+      <span class="arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </div>
+  </div>
+</a>
+
+</body>
+</html>
